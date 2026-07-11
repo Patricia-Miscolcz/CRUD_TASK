@@ -45,10 +45,20 @@ botaoEditar.addEventListener("click", () => {
 });
 
 
+const botaoExcluir = document.createElement("button");
+botaoExcluir.innerHTML = "🗑️";
+botaoExcluir.title = "Excluir tarefa";
+
+botaoExcluir.addEventListener("click", () => {
+
+    novaTarefa.remove();
+
+});
 
 
 novaTarefa.appendChild(texto);
 novaTarefa.appendChild(botaoEditar);
+novaTarefa.appendChild(botaoExcluir);
 
 listaTarefas.appendChild(novaTarefa);
 
