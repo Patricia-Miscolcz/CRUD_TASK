@@ -1,10 +1,5 @@
-// Campo onde o usuário digita a tarefa
 const inputTarefa = document.getElementById("tarefa");
-
-// Botão Adicionar
 const botaoAdicionar = document.querySelector("button");
-
-// Área onde as tarefas serão exibidas
 const listaTarefas = document.getElementById("listaTarefas");
 
 // Evento de clique
@@ -16,13 +11,44 @@ if (textoTarefa === "") {
     return;
 }
 
-// Remove a mensagem inicial
 if (listaTarefas.textContent.includes("Nenhuma tarefa")) {
     listaTarefas.innerHTML = "";
 }
 
-const novaTarefa = document.createElement("p");
-novaTarefa.textContent = textoTarefa;
+const novaTarefa = document.createElement("div");
+novaTarefa.classList.add("tarefa");
+
+const texto = document.createElement("span");
+texto.textContent = textoTarefa;
+
+const botaoEditar = document.createElement("button");
+botaoEditar.innerHTML = "✏️";
+botaoEditar.title = "Editar tarefa";
+
+botaoEditar.addEventListener("click", () => {
+
+    const novoTexto = prompt("Edite a tarefa:", texto.textContent);
+
+    if (novoTexto === null) {
+        return;
+    }
+
+    const textoAtualizado = novoTexto.trim();
+
+    if (textoAtualizado === "") {
+        alert("A tarefa não pode ficar vazia.");
+        return;
+    }
+
+    texto.textContent = textoAtualizado;
+
+});
+
+
+
+
+novaTarefa.appendChild(texto);
+novaTarefa.appendChild(botaoEditar);
 
 listaTarefas.appendChild(novaTarefa);
 
