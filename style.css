@@ -8,63 +8,41 @@
 body{
 
     background:#f5f7fa;
-
     display:flex;
-
     justify-content:center;
-
     padding:40px;
-
 }
 
 main{
 
     width:100%;
-
     max-width:700px;
-
     background:white;
-
     padding:30px;
-
     border-radius:12px;
-
     box-shadow:0 5px 20px rgba(0,0,0,.15);
-
 }
 
 h1{
-
     margin-bottom:10px;
-
 }
 
 p{
-
     color:#666;
-
     margin-bottom:25px;
-
 }
 
 input{
 
     width:75%;
-
     padding:12px;
-
 }
 
 button{
-
     padding:12px 20px;
-
     cursor:pointer;
-
 }
 
 hr{
-
     margin:25px 0;
-
 }
